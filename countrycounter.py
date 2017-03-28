@@ -9,4 +9,15 @@ for object in metObjects:
 		numberOfCountries[object['Country']] += 1
 	else:
 		numberOfCountries[object['Country']] = 1
-print json.dumps(numberOfCountries)
+
+countries = []
+
+for key,value in numberOfCountries.items():
+	country=dict()
+	country['name']=key
+	country['population']=value 
+	countries.append(country)
+
+
+
+print json.dumps(countries)

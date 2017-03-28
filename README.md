@@ -1,3 +1,3 @@
 
-Country Population Map
+Country Population Choropleth Map
 

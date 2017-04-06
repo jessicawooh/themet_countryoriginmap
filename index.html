@@ -4,8 +4,8 @@
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 960px;
-  height: 500px;
+  width: 100%;
+  height: ;
   position: relative;
 }
 
@@ -59,13 +59,13 @@ body {
 d3.json("countries.json", function(err, data) {
 
   var config = {"data0":"name","data1":"population",
-              "label0":"label 0","label1":"label 1","color0":"#99ccff","color1":"#0050A1",
+              "label0":"label 0","label1":"label 1","color0":"#993333","color1":"#003366",
               "width":1600,"height":1600}
   
   var width = config.width,
       height = config.height;
   
-  var COLOR_COUNTS = 9;
+  var COLOR_COUNTS = 12800;
   
   function Interpolate(start, end, steps, count) {
       var s = start,
@@ -149,8 +149,9 @@ d3.json("countries.json", function(err, data) {
   var graticule = d3.geo.graticule();
   
   var svg = d3.select("#canvas-svg").append("svg")
-      .attr("width", width)
-      .attr("height", height);
+      .attr("width", "100%")
+      .attr("viewbox", "0 0 160 160")
+      .attr("preserveAspectRatio", true);
   
   svg.append("path")
       .datum(graticule)
@@ -170,12 +171,19 @@ d3.json("countries.json", function(err, data) {
   var quantize = d3.scale.quantize()
       .domain([0, 1.0])
       .range(d3.range(COLOR_COUNTS).map(function(i) { return i }));
+  console.log("color_counts" + COLOR_COUNTS);
   
+
+
+  quantize.domain([0, 35000]);
+/*
   quantize.domain([d3.min(data, function(d){
       return (+d[MAP_VALUE]) }),
     d3.max(data, function(d){
       return (+d[MAP_VALUE]) })]);
-  
+  */
+
+
   d3.json("https://s3-us-west-2.amazonaws.com/vida-public/geo/world-topo-min.json", function(error, world) {
     var countries = topojson.feature(world, world.objects.countries).features;
   
@@ -202,6 +210,7 @@ d3.json("countries.json", function(err, data) {
           if (valueHash[d.properties.name]) {
             var c = quantize((valueHash[d.properties.name]));
             var color = colors[c].getColors();
+            console.log (quantize(valueHash[d.properties.name]) + '=' + color.r );
             return "rgb(" + color.r + "," + color.g +
                 "," + color.b + ")";
           } else {

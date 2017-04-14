@@ -5,7 +5,7 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 100%;
-  height: ;
+  height: 100%;
   position: relative;
 }
 
@@ -44,6 +44,7 @@ body {
   float: right;
 }
 
+
 </style>
 
 <div id="tooltip-container"></div>
@@ -56,10 +57,10 @@ body {
 
 <script>
 
-d3.json("countries.json", function(err, data) {
+d3.json("newcountries.json", function(err, data) {
 
   var config = {"data0":"name","data1":"population",
-              "label0":"label 0","label1":"label 1","color0":"#993333","color1":"#003366",
+              "label0":"label 0","label1":"label 1","color0":"#003366","color1":"#993333",
               "width":1600,"height":1600}
   
   var width = config.width,
@@ -150,8 +151,9 @@ d3.json("countries.json", function(err, data) {
   
   var svg = d3.select("#canvas-svg").append("svg")
       .attr("width", "100%")
-      .attr("viewbox", "0 0 160 160")
-      .attr("preserveAspectRatio", true);
+      .attr("viewbox", "0 0 10 10")
+      .attr("preserveAspectRatio", "xMidYMid slice")
+      .attr("preserveAspectRatio", "xMidYMid meet");
   
   svg.append("path")
       .datum(graticule)
@@ -175,7 +177,7 @@ d3.json("countries.json", function(err, data) {
   
 
 
-  quantize.domain([0, 35000]);
+  quantize.domain([0, 500]);
 /*
   quantize.domain([d3.min(data, function(d){
       return (+d[MAP_VALUE]) }),
@@ -259,7 +261,7 @@ d3.json("countries.json", function(err, data) {
         .attr("class", "boundary")
         .attr("d", path);
     
-    svg.attr("height", config.height * 2.2 / 3);
+    svg.attr("height", config.height * 2.15 / 3);
   });
   
   d3.select(self.frameElement).style("height", (height * 2.3 / 3) + "px");

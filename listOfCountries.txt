@@ -185,8 +185,8 @@ Tuvalu
 Uganda
 Ukraine
 United Arab Emirates (UAE)
-United Kingdom 
-United States 
+United Kingdom
+United States
 Uruguay
 Uzbekistan
 Vanuatu
@@ -196,3 +196,7 @@ Vietnam
 Yemen
 Zambia
 Zimbabwe
+Greenland
+Iceland
+Uruguay
+Central African Republic

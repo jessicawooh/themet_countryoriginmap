@@ -2,7 +2,7 @@
 newcsv=open("countrypopulation.csv", "w")
 #mywriter=csv.writer(newcsv, delimiter = ",")
 listOfcountries=open("listOfcountries.txt","r")
-countriesfile=open("testcountries.txt","r")
+countriesfile=open("MetObjectsCountries.txt","r")
 countries=countriesfile.readlines()
 index=[]
 

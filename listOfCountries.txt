@@ -30,14 +30,13 @@ Cabo Verde
 Cambodia
 Cameroon
 Canada
-Central African Republic (CAR)
 Chad
 Chile
 China
 Colombia
 Comoros
-Democratic Republic of the Congo
-Republic of the Congo
+Democratic Republic of Congo
+Congo
 Costa Rica
 Cote d'Ivoire
 Croatia
@@ -141,7 +140,7 @@ Poland
 Portugal
 Qatar
 Romania
-Russia
+Russian Federation
 Rwanda
 Saint Kitts and Nevis
 Saint Lucia

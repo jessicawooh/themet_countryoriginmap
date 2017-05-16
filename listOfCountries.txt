@@ -125,7 +125,7 @@ New Zealand
 Nicaragua
 Niger
 Nigeria
-North Korea
+Korea
 Norway
 Oman
 Pakistan
@@ -159,7 +159,6 @@ Slovenia
 Solomon Islands
 Somalia
 South Africa
-South Korea
 South Sudan
 Spain
 Sri Lanka

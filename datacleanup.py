@@ -3,8 +3,12 @@ newcsv=open("countrypopulation.csv", "w")
 #mywriter=csv.writer(newcsv, delimiter = ",")
 listOfcountries=open("listOfcountries.txt","r")
 countriesfile=open("MetObjectsCountries.txt","r")
-countries=countriesfile.readlines()
+countries = []
+countries = countriesfile.readlines()
 index=[]
+
+#print "countries length=" + str(len(countries))
+
 
 for row in listOfcountries:
 		rowcount = 0 
@@ -13,7 +17,7 @@ for row in listOfcountries:
 		#print "initrowcount = " + str(rowcount)
 		for country in countries:
 			#debugging
-			#print "country =" + country
+			#print str(row) + ': ' + country + '\n'
 			if str(row) in str(country):
 					rowcount += 1
 			#debugging		
